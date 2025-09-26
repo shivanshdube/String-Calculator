@@ -16,4 +16,10 @@ public class StringCalculatorTest {
     void addSingleNumberTest() {
         assertEquals(1,calculator.add("1"));
     }
+
+    // TODO: handle comma separated string in add method
+    @Test
+    void addTwoNumberCommaSeparatedTest() {
+        assertEquals(6,calculator.add("1,5"));
+    }
 }
