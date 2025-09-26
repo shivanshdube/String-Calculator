@@ -8,6 +8,9 @@ public class StringCalculator {
         if (!numbers.contains(",") && !numbers.contains("\n")) {
             return Integer.parseInt(numbers);
         }
-        throw new UnsupportedOperationException("Implementation Pending");
+        String[] tokens = numbers.split(",");
+        int sum = 0;
+        for (String t : tokens) sum += Integer.parseInt(t);
+        return sum;
     }
 }
