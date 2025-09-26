@@ -56,4 +56,26 @@ public class StringCalculatorTest {
         assertEquals(2, calculator.add("2,1001"));
     }
 
+    @Test
+    void add_customLongDelimiter() {
+        assertEquals(6, calculator.add("//[***]\n1***2***3"));
+    }
+
+    @Test
+    void add_multipleDelimiters() {
+        assertEquals(6, calculator.add("//[*][%]\n1*2%3"));
+    }
+
+    @Test
+    void add_multipleLongDelimiters() {
+        assertEquals(6, calculator.add("//[**][%%]\n1**2%%3"));
+    }
+
+    @Test
+    void getCalledCount_returnsNumberOfCalls() {
+        calculator.add("1,2");
+        calculator.add("3");
+        assertEquals(2, calculator.getCalledCount());
+    }
+
 }
