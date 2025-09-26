@@ -10,17 +10,17 @@ public class StringCalculatorTest {
 
     @Test
     void add_emptyString_returnsZero() {
-        assertEquals(0,calculator.add(""));
+        assertEquals(0, calculator.add(""));
     }
 
     @Test
     void add_singleNumber_returnsValue() {
-        assertEquals(1,calculator.add("1"));
+        assertEquals(1, calculator.add("1"));
     }
 
     @Test
     void add_twoNumbers_commaSeparated() {
-        assertEquals(6,calculator.add("1,5"));
+        assertEquals(6, calculator.add("1,5"));
     }
 
     @Test
