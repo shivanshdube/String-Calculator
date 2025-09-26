@@ -8,17 +8,25 @@ public class StringCalculatorTest {
     private final StringCalculator calculator = new StringCalculator();
 
     @Test
-    void emptyStringTest() {
+    void add_emptyString_returnsZero() {
         assertEquals(0,calculator.add(""));
     }
 
     @Test
-    void addSingleNumberTest() {
+    void add_singleNumber_returnsValue() {
         assertEquals(1,calculator.add("1"));
     }
 
     @Test
-    void addTwoNumberCommaSeparatedTest() {
+    void add_twoNumbers_commaSeparated() {
         assertEquals(6,calculator.add("1,5"));
     }
+
+    //TODO : handle multiple comma separated strings for input
+    @Test
+    void add_multipleNumbers() {
+        StringCalculator calc = new StringCalculator();
+        assertEquals(10, calc.add("1,2,3,4"));
+    }
+
 }
