@@ -40,7 +40,6 @@ public class StringCalculatorTest {
         assertEquals(3, calc.add("//;\n1;2"));
     }
 
-    //TODO: Handle negative input
     @Test
     void add_negativeNumber_throws() {
         StringCalculator calc = new StringCalculator();

@@ -1,6 +1,9 @@
 package org.calculator;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public class StringCalculator {
 
@@ -18,10 +21,21 @@ public class StringCalculator {
 
         String[] tokens = numbers.split(delimiterRegex);
         int sum = 0;
+        List<Integer> negatives = new ArrayList<>();
+
         for (String t : tokens) {
             if (t.isEmpty()) continue;
-            sum += Integer.parseInt(t);
+            int value = Integer.parseInt(t);
+            if (value < 0) negatives.add(value);
+            sum += value;
         }
+
+        if (!negatives.isEmpty()) {
+            String msg = "negative numbers not allowed " +
+                    negatives.stream().map(String::valueOf).collect(Collectors.joining(","));
+            throw new IllegalArgumentException(msg);
+        }
+
         return sum;
     }
 }
