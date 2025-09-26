@@ -12,7 +12,6 @@ public class Main {
         System.out.println("Supports commas, newlines, and custom delimiters (//[delim]\\n...).");
 
         while (true) {
-            while (true) {
                 System.out.print("\nInput: ");
                 String input = scanner.nextLine();
                 if (input.isEmpty()) break;
@@ -30,5 +29,4 @@ public class Main {
             System.out.println("\nTotal Add() calls: " + calculator.getCalledCount());
             System.out.println("Goodbye!");
         }
-    }
 }
