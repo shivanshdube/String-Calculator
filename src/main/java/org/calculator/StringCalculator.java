@@ -8,7 +8,7 @@ public class StringCalculator {
         if (!numbers.contains(",") && !numbers.contains("\n")) {
             return Integer.parseInt(numbers);
         }
-        String[] tokens = numbers.split(",");
+        String[] tokens = numbers.split(",|\n");
         int sum = 0;
         for (String t : tokens) sum += Integer.parseInt(t);
         return sum;
