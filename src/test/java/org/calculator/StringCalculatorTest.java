@@ -12,7 +12,7 @@ public class StringCalculatorTest {
         assertEquals(0,calculator.add(""));
     }
 
-    // TODO handle addition of a single no string
+    @Test
     void addSingleNumberTest() {
         assertEquals(1,calculator.add("1"));
     }
