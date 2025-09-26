@@ -22,11 +22,17 @@ public class StringCalculatorTest {
         assertEquals(6,calculator.add("1,5"));
     }
 
-    //TODO : handle multiple comma separated strings for input
     @Test
     void add_multipleNumbers() {
         StringCalculator calc = new StringCalculator();
         assertEquals(10, calc.add("1,2,3,4"));
     }
+
+    //TODO: Handle new lines in the input with comma
+    @Test
+    void add_newlinesBetweenNumbers() {
+        assertEquals(6, calculator.add("1\n2,3"));
+    }
+
 
 }
